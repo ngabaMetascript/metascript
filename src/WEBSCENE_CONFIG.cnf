@@ -1,0 +1,8 @@
+#meta
+charset='utf-8'
+#css
+bootstrap.min.css
+fontawesome.min.css
+#js
+jquery.js
+bootstrap.min.js
