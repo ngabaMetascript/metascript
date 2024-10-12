@@ -1,5 +1,6 @@
 // Note to Myself, in C++ Philosoy, dont use functions to the rendrer system but methods where the polymorphism is better represented
 
+ #include "graphicalSystem.h"
 
 #include <string>
 #include <unistd.h>
@@ -49,6 +50,35 @@ void setStr(std::string T, std::string args...){
 
 int main()
 {
-	int x_2D;
-	return 0; 
+
+    webRenderer::SceneRenderer* webSceneRenderer; 
+    webSceneRenderer = webSceneInitializer();
+    std::cout<<webSceneRenderer->renderer(sceneComponents);
+    pid_t p;
+    p = fork();
+    if ( p == 0 )
+    {
+	   if(system(nullptr)){
+		cout<<"Yes Command Processor is present";
+		system("nodemon server.js &");
+	   }
+	   else
+	   {
+		cout<<"No Command Processor is not present";
+	   }
+     }
+  /*
+  std::string
+        str1( "Hello" ),
+        str2( "world" );
+
+    func(1,2.5,'a',str1);
+    func2( {10, 20, 30, 40 }) ;
+    func2( {str1, str2 } ) ;
+  */
+  
+  /*
+  std::string a1="skjjkjks",a2="llkl";
+  setStr(a1,a2); 
+  */ 
 } 
