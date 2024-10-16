@@ -3,9 +3,9 @@
 
 #include <stdlib.h>
 #include <string>
+#include <vector>
 
 using namespace std;
-using namespace linkedList;
 
 enum ServerName {Node, Nodemon, WebAssembly, MetaServer};
 
@@ -44,13 +44,12 @@ class MetaWorld{
 }
 
 class WebMetaWorld : public MetaWorld{
-	Server* server;
-	DataBase* db;
-	Router* rt;
-	vector<Socket*> scks;
+	Server* server=nullptr;
+	DataBase* db=nullptr;
+	Router* rt=nullptr;
+	vector<Socket*> scks=nullptr;
 
-	vector<SceneElt*> scenes;
-	//webRenderer::WebSceneRenderer* world_renderer;
+	vector<MetaScene*> scenes;
 }
 
 #endif

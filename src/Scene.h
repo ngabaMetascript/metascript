@@ -11,35 +11,40 @@ class Scene{
 		// time is naturally configured
 		// space is naturally configured
 		string name;
+		string corpus;
 		vector<TimerProcess> timers;
+	public:
+		virtual string render();
 };
 
 class WebScene : public Scene{
 	protected:
-		LinkedList<string> meta_links;
-		LinkedList<string> head_links;
-		LinkedList<string> css_sheets;
+		vector<string> meta_links;
+		vector<string> head_links;
+		vector<string> css_sheets;
 		
-		LinkedList<string> js_scripts_header;
-		LinkedList<string> js_scripts;
+		vector<string> js_scripts_header;
+		vector<string> js_scripts;
+
+		
 
 	public:
 		WebScene();
 		~WebScene();
 		void setMetaLinks(string);
 		void setMetaLinks(string, string...);
-		void setMetaLinks(LinkedList<string>);
-		LinkedList<string> getMetaLinks();
+		void setMetaLinks(vector<string>);
+		vector<string> getMetaLinks();
 		
 		void setCssSheets(string);
 		void setCssSheets(string, string...);
-		void setCssSheets(LinkedList<string>);
-		LinkedList<string> getCssSheets();
+		void setCssSheets(vector<string>);
+		vector<string> getCssSheets();
 		
 		void setJsScripts(string);
 		void setJsScripts(string, string...);
-		void setJsScripts(LinkedList<string>);
-		LinkedList<string> getJsScripts();
+		void setJsScripts(vector<string>);
+		vector<string> getJsScripts();
 		
 };
 

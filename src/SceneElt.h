@@ -3,11 +3,19 @@
 
 
 #include <string>
+#include <map>
 #include <vector>
 
-class SceneElt{
+struct QuerySet{
+	string name;
+	string query;
+	map<string, string> result;
+};
+
+class MetaScene{
 	Scene* scene;
 	vector<Elt*> elts;
+	vector<QuerySet*> queries;
 }
 
 #endif
