@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 Fonctionnalités  
+## 🚀 Fonctionnalities 
 
 - **Syntax inspired by C++**: Familiar structure for developers.
 - **Graphics Engine Integration**: The MetaScript Architecture is designed to be compatible with existing graphics engines (from the most powerful like UNreal Engine to the lightest like Phaser)
