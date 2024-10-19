@@ -8,6 +8,7 @@
 using namespace std;
 
 enum ServerName {Node, Nodemon, WebAssembly, MetaServer};
+enum SGBDName {MySQL, PostGreSQL, MongoDB, Casandra, SQLite};
 
 namespace worldSetuper{
 	struct Server {
@@ -24,6 +25,7 @@ namespace worldSetuper{
 	};
 	
 	struct DataBase {
+		SGBDName SGBD;
 		string name;
 		int port
 		string ip;
@@ -47,7 +49,7 @@ class WebMetaWorld : public MetaWorld{
 	Server* server=nullptr;
 	DataBase* db=nullptr;
 	Router* rt=nullptr;
-	vector<Socket*> scks=nullptr;
+	vector<Socket*> scks;
 
 	vector<MetaScene*> scenes;
 }

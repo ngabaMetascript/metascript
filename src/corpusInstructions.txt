@@ -1,0 +1,10 @@
+// Utility Has to be see
+
+
+$value : // Get the Value of an Element
+-> Can be a Component Method
+-> Can be a QuerySet Data 
+#value : // Get the Renderer of a COmponent
+#value | costruct($datas)
+-> Create a Component based on the nethod consctruc and datas and renderer 
+% for : % for i=0; i<2; i++ % ----- % endfor %

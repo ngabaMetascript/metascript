@@ -1,19 +1,14 @@
 #include "Renderer.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 namespace webRenderer
 {
 	string rendererElt(Elt* component){
-		string result = "";
-		return result;
-	}
-	
-	string rendererShape(Shape* component){
-		string instructions="";	
+		string instructions = "";
 		string name = component->getName();
-		instructions += name+" = document.createElement('"+"div"+"')" +";";
-		instructions += name+".setAttribute('id','"+name+"')" +";";
+		
 		for (DataAttribute* da : component->getAttributes() ) 
 		{
 			if (da->field == "data-class"){
@@ -38,16 +33,43 @@ namespace webRenderer
 				instructions += name+".setAttribute('"+da->field+"','"+da->value+"')";
 			}
 		}
+		return instructions;
+	}
+
+	string rendererInfo(EltInfo* component){
+		string result = "";
+		return result;	
+	}
+	
+	string rendererText(TextInfo* component){
+		string instructions="";	
+		string name = component->getName();
+		instructions += name +" = document.createElement(span);";
+		instructions += name +".innerHTML = \""+component->getValue()+"\";";
+		instructions += rendererElt(component);
+		
+		return instructions;
+	}
+	
+	string rendererShape(Shape* component){
+		string instructions="";	
+		string name = component->getName();
+		instructions += name+" = document.createElement('"+"div"+"')" +";";
+		instructions += name+".setAttribute('id','"+name+"')" +";";
+		instructions += rendererElt(component);
+		
 		for (EltInfo* info : component->getInfos())
 		{
-			instructions += info->renderer("WEB");
+			instructions += info->render("WEB");
+			instructions += name+".appendChild("+info->getName()+") ;";
 		}
 		if ( component->getParent() == nullptr){
 			instructions += "document.appendChild("+name+") ;";
 		}
 		else{
 			instructions += component->getParent()->getName()+".appendChild("+name+") ;";
-		}	
+		}
+			
 		return instructions;
 	}
 
@@ -73,6 +95,28 @@ namespace webRenderer
 		if ( component->getWidth() != nullptr && component->getWidth()->value() != 0) { instructions += component->getName()+".style.width = "+to_string(component->getWidth()->value()) +";"; }
 		if ( component->getHeight() != nullptr && component->getHeight()->value() != 0 ) { instructions += component->getName()+".style.height = "+to_string(component->getHeight()->value())+";"; }
 		return instructions;	
+	}
+
+	string rendererScene(WebScene* scene){
+		string instructions = "<head>";
+		for ( string meta : scene->getMetaLinks()){
+			instructions += meta; 
+		}
+		for ( string head : scene->getHeadLinks()){
+			instructions += head; 
+		}
+		for ( string css : scene->getCssSheets()){
+			instructions += css; 
+		}
+		for ( string js : scene->getJsScriptsHeader()){
+			instructions += js; 
+		}
+		instructions += "</head>";
+		instructions += "<body> <div id='"+scene->getName()+"'> </div> </body>";
+		for ( string js : scene->getJsScripts()){
+			instructions += js; 
+		}
+		return instructions;
 	}
 
 }

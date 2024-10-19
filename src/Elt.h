@@ -26,20 +26,50 @@ class Elt{
 		Elt* parent=nullptr;
 	public:
 		Elt();
-		virtual string renderer(string);
 		string getName(){return name;};
 		vector<DataAttribute*> getAttributes(){return attributes;}
 		Elt* getParent(){return parent;}
 		
 		void setName(string arg){name=arg;};
+		void setAttributes(DataAttribute*);
+		void setAttributes(DataAttribute*, DataAttribute* ...);		
+		void setAttributes(vector<DataAttribute*>);
+		
+		virtual string render(string);
 };
+
+class EltGroup : public Elt{
+	protected:
+		vector<Elt*> elts;
+};
+
+class ArrayEltGroup : public EltGroup{
+	protected:
+		string elts_type;
+};
+
 
 // Informations Elements
 class EltInfo : public Elt{
+	protected:
+		string value;
+	public:
+		EltInfo();
+		EltInfo(string);
+		~EltInfo();
+		
+		string getValue(){ return value; }
+		virtual string render(string);
 
 };
 
 class TextInfo : public EltInfo {
+	public:
+		TextInfo();
+		TextInfo(string);
+		~TextInfo();
+
+		virtual string render(string);
 
 };
 
@@ -77,6 +107,9 @@ namespace c2D{
 			vector<EltInfo*> infos;	
 		public:
 			vector<EltInfo*> getInfos(){ return infos; }
+			void addInfos(EltInfo*);
+			void addInfos(EltInfo*, EltInfo* ...);
+			void addInfos(vector<EltInfo*>);
 	};
 	
 	class Line : public Shape {
@@ -85,7 +118,7 @@ namespace c2D{
 		public:
 			Line();
 			Line(Point2D*,Point2D*);
-			virtual string renderer(string);
+			virtual string render(string);
 			float value(){ return sqrt(pow( b->getX() - a->getX(), 2) + pow( b->getY() - a->getY() , 2)); }
 			bool isXaxis(){ return b->getX() == a->getX() && b->getY() != a->getY() ; }
 			bool isYaxis(){ return b->getX() != a->getX() && b->getY() == a->getY() ; }
@@ -100,7 +133,7 @@ namespace c2D{
 			Rectangle(Line*,Line*);
 			Line* getWidth(){ return width; }
 			Line* getHeight(){ return height; }
-			virtual string renderer(string);
+			virtual string render(string);
 	};
 	
 	class Circle : public Shape{
@@ -129,6 +162,15 @@ namespace c2D{
 	class Component : public Elt{
 		protected:
 			vector<ShapeGroup*> groups;	
+	};
+	
+	// classes for special purposes
+	class Table : public Rectangle{
+	
+	};
+	
+	class Form : public Rectangle{
+	
 	};
 }
 

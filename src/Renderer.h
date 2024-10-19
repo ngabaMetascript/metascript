@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "Elt.h"
+#include "Scene.h"
 using namespace std;
 
 namespace webRenderer
@@ -22,6 +23,8 @@ namespace webRenderer
 	string rendererLine(Line*);
 	string rendererRectangle(Rectangle*);
 	string rendererCircle(Circle*);
+
+	string rendererScene(WebScene*);
 }
 
 namespace phaserRenderer

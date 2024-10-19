@@ -4,6 +4,7 @@
 #include <string>
 #include "Signal.h"
 
+// Based on time alteration we launch sme signals
 class TimerProcess {
 	enum nature{ CYCLE, DELAY, SPECIFIC };
 	string timer;
