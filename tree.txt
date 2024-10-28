@@ -1,0 +1,35 @@
+Fusion/
+│
+├── **Assets/** # Groups all media files (textures, sounds, meshes, etc.)
+│ ├── Characters/ # Character meshes, skeletons and textures
+│ ├── UI/ # Textures and icons for user interfaces
+│ ├── Animations/ # Animations (logo/start, characters, vehicles)
+│ ├── Audio/ # Sound effects and music for the game
+│ └── Environments/ # 3D models and textures for hubs and terrains
+│
+├── **Blueprints/** # All blueprints related to game logic
+│ ├── UI/ # Interface blueprints (menus, HUD, etc.)
+│ ├── Characters/ # Blueprints for characters and customization
+│ ├── GameModes/ # Logic for different game modes (Battleground, Hiverbike)
+│ ├── Vehicles/ # Blueprints related to vehicles (Hiverbike)
+│ └── Systems/ # Global systems (settings, save, audio)
+│ └── Watches/ # Watches systems Configuration
+│
+├── **Maps/** # Contains the game's levels and maps
+│ ├── MainHub/ # Main Hub map (Fusion)
+│ ├── FP_Battleground/ # FPS battle maps
+│ └── Hiverbike/ # Tracks for the battle simulator course
+│
+├── **UI/** # Widgets and user interfaces
+│ ├── MainMenu/ # Main menu interface
+│ ├── Settings/ # Settings interface (graphics, audio, controls)
+│ ├── Customisation/ # Character customization interface
+│ └── HUD/ # In-game HUDs and interfaces
+│
+├── **Config/** # Configuration files (GameMode, Input, etc.)
+│
+├── **Source/** # C++ source code if your project uses native code
+│
+├── **Saved/** # Unreal Engine project saves
+│
+└── **Content/** # Default files from Unreal (will point to your global project)
