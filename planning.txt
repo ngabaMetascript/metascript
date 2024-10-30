@@ -1,0 +1,53 @@
+|=============================================================== |
+|=============================================================== |
+|                                                                |
+| -------------------- MAIN PLANNING --------------------------- |
+|                                                                |
+|=============================================================== |
+|=============================================================== |
+1* Pre-production ( 1 to 2 weeks )
+- Gameplay definition and creation of the Game Design Document (GDD).
+- Role distribution and infrastructure setup (network, Git/Perforce server).
+---------------------------------------------------------------
+2* Prototype (3 to 4 weeks)
+- Character customization
+- Hoverboard Mechanics
+- Basic mechanics setup (movement, shooting).
+- Simple multiplayer functionality (connection and synchronization of two players).
+---------------------------------------------------------------
+3* Production (8 to 12 weeks)
+- Full integration of weapons, maps, and game modes.
+- Development of matchmaking and advanced systems.
+- Artistic creation: modeling, animations, sounds.
+---------------------------------------------------------------
+4* Testing and Optimization (3 to 4 weeks)
+---------------------------------------------------------------
+- Multiplayer testing (latency, network bugs).
+- Performance and graphics optimization.
+- Final fixes before release.
+
+
+|=============================================================== |
+|=============================================================== |
+|                                                                |
+| --------------- NGABA DEV PLANNING --------------------------- |
+|                                                                |
+|=============================================================== |
+|=============================================================== |
+
+Week 1 - Base Prototype
+------------------------------------------------------------------
+1- Implement the player movesets
+2- Add the First Person Camera
+3- Synchronize the movesets of players on network
+4- Implement the Player customization Interface
+5- Add a SImple Gun ( Projectile + Animations )
+
+Week 2 - Shoot and Moving System
+------------------------------------------------------------------
+1 - Personnalise the Shooting and Reload Options
+2 - Synchronize the Shoot among players
+3 - Implement the Watch Mecanics
+4 - IMplement Vehicle
+5 - IMplement HoverBoard Mechanics
+

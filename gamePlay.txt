@@ -1,0 +1,129 @@
+1. Game Design Document (GDD)
+
+Le GDD est un document central contenant toutes les informations sur la vision du jeu, son gameplay et ses mécaniques.
+Structure du GDD :
+
+    Résumé du jeu :
+        Titre du jeu
+        Type de jeu (FPS multijoueur)
+        Pitch rapide (par ex., "Un FPS rapide avec un focus sur des combats intenses en arène")
+    Mécaniques principales :
+        Mouvement (sprint, glissade, saut, etc.)
+        Système de tir (précision, types d’armes, rechargement)
+    Multijoueur :
+        Modes de jeu (deathmatch, capture de drapeau, etc.)
+        Taille des équipes et nombre maximal de joueurs
+        Gestion du matchmaking ou serveurs dédiés
+    Progression :
+        Système de niveaux ou de rangs
+        Déverrouillages d'armes ou de compétences
+    Interface :
+        HUD (compteur de munitions, barre de santé, minimap)
+        Menus et options
+    Inspirations : Références à d'autres jeux ou concepts.
+
+2. Technical Design Document (TDD)
+
+Ce fichier se concentre sur les détails techniques du jeu.
+Structure du TDD :
+
+    Architecture Réseau :
+        Modèle (client-serveur ou peer-to-peer)
+        Synchronisation des objets et des actions
+        Gestion de la latence et compensation du lag
+    Systèmes :
+        Moteur de physique (Unreal Engine)
+        Gestion des collisions (projectiles, joueurs)
+        Système de spawn et respawn
+    Configuration des serveurs :
+        Hébergement, capacité et stabilité
+        Backend pour le matchmaking
+    Optimisation :
+        Stratégies d’optimisation pour FPS stables en multijoueur.
+
+3. Fichier des Mécaniques de Gameplay
+
+Décrit en détail chaque mécanique du jeu pour que l’équipe de développement sache quoi implémenter.
+Contenu du fichier des mécaniques :
+
+    Armes :
+        Types d'armes (fusil d’assaut, sniper, etc.)
+        Dégâts, cadence de tir, portée, recul
+        Système de visée (hip fire / iron sight)
+    Mouvement :
+        Vitesse de déplacement (course, marche)
+        Endurance et récupération
+        Actions (glissades, escalade, double saut)
+    Système de santé :
+        Régénération automatique ou packs de soin
+        Points de santé maximum
+        Effets secondaires (empoisonnement, étourdissement)
+
+4. Fichier des Modes de Jeu
+
+Détaille chaque mode de jeu disponible.
+Contenu du fichier des modes :
+
+    Deathmatch :
+        Nombre de points pour gagner
+        Temps limite
+    Capture de drapeau :
+        Règles de capture et défense
+        Emplacements des drapeaux
+    Match à objectifs :
+        Règles spécifiques à chaque objectif (ex. : désamorçage de bombe)
+
+Chaque mode doit inclure une explication du scoring, le rôle des joueurs, et le temps maximum.
+5. Fichier des Cartes et Environnements
+
+Planifie la création des niveaux et détails sur la conception des cartes.
+Contenu :
+
+    Thème : Urbain, futuriste, nature, etc.
+    Dimensions et layout : Taille de la carte, emplacements stratégiques (sniper spots, zones d’embuscade)
+    Points de spawn : Pour chaque équipe ou joueur.
+    Objets interactifs : Portes, ascenseurs, objets destructibles.
+
+Bonus : Crée un document de wireframe ou croquis pour visualiser le layout avant la modélisation.
+6. Fichier de Progression et Récompenses
+
+Documente comment les joueurs évoluent et débloquent du contenu.
+Contenu :
+
+    Niveaux et XP : Combien d’XP est nécessaire pour chaque niveau.
+    Déblocages :
+        Armes et accessoires (viseurs, chargeurs, skins).
+        Succès / trophées.
+    Monnaie en jeu :
+        Système d'achat cosmétique (skins, avatars)
+        Récompenses journalières.
+
+7. Fichier des Sons et Effets Audio
+
+Détaille les éléments audio pour l'immersion du joueur.
+Contenu :
+
+    Effets de tir et impact : Différenciation des sons selon le type d’arme.
+    Effets environnementaux : Bruit de pas, échos, sons ambiants.
+    Musique dynamique : Évolution de la musique selon l’action (combat intense vs calme).
+    Indicateurs sonores : Ex. : bruit quand un joueur est touché ou éliminé.
+
+8. Fichier de Test (QA)
+
+Prévois un plan de test pour identifier les bugs et améliorer l'expérience.
+Contenu :
+
+    Liste des fonctionnalités à tester :
+        Matchmaking, synchronisation, respawn
+    Protocole de test :
+        Scénarios de test pour chaque mode de jeu
+    Rapports de bugs : Format standard (problème, reproductibilité, capture d'écran).
+
+Outils Recommandés
+
+    Google Docs / Notion : Collaboration en ligne pour le GDD et les autres documents.
+    Trello / Jira : Suivi des tâches et avancement.
+    Miro : Outil de wireframing pour les cartes et niveaux.
+    Perforce ou Git : Gestion des versions de fichiers et du code.
+
+Avec ces fichiers, ton équipe disposera d'une documentation complète et structurée qui facilite la collaboration et assure que chacun reste aligné sur la vision du projet. Si tu veux approfondir un des fichiers ou avoir des modèles concrets, fais-le moi savoir !
