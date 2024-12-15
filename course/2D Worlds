@@ -1,0 +1,77 @@
+Bibliothèques pour faciliter la création d'un serveur Web en C++
+
+    Boost.Asio : Une bibliothèque C++ puissante pour la gestion des réseaux et des E/S. Elle vous permet de gérer les sockets et les connexions de manière asynchrone, ce qui est utile pour créer un serveur performant.
+
+    Pour installer Boost :
+
+    bash
+
+sudo apt-get install libboost-all-dev  # Sur Linux
+
+Un exemple de serveur simple en utilisant Boost.Asio :
+
+cpp
+
+#include <iostream>
+#include <boost/asio.hpp>
+
+using namespace boost::asio;
+using ip::tcp;
+
+int main() {
+    io_service io_service;
+
+    // On crée un endpoint pour écouter sur le port 8080
+    tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), 8080));
+
+    while (true) {
+        // On accepte une nouvelle connexion
+        tcp::socket socket(io_service);
+        acceptor.accept(socket);
+
+        // On lit la requête du client
+        boost::asio::streambuf request;
+        read_until(socket, request, "\r\n");
+
+        // On traite la requête et on envoie une réponse
+        std::string response = 
+            "HTTP/1.1 200 OK\r\n"
+            "Content-Type: text/html\r\n\r\n"
+            "<html><body><h1>Hello, World!</h1></body></html>";
+
+        write(socket, buffer(response));
+    }
+
+    return 0;
+}
+
+Ce code crée un serveur Web basique qui écoute sur le port 8080 et envoie toujours la même réponse HTML "Hello, World!" à chaque client qui se connecte.
+
+Cpp-HTTP : Une bibliothèque open-source simplifiant la création de serveurs HTTP. Cpp-HTTP permet de gérer les requêtes GET et POST de manière plus simple que d'utiliser directement les sockets.
+
+Crow : Un micro-framework en C++ similaire à Flask (en Python), qui facilite la création d’un serveur Web pour traiter des requêtes plus complexes. Pour l'utiliser, vous pouvez ajouter la bibliothèque via CMake et créer un serveur Web simple.
+
+Exemple d'utilisation de Crow :
+
+cpp
+
+    #include "crow.h"
+
+    int main()
+    {
+        crow::SimpleApp app;
+
+        CROW_ROUTE(app, "/")([](){
+            return "Hello, World!";
+        });
+
+        app.port(8080).multithreaded().run();
+    }
+
+Points à prendre en compte
+
+    Sécurité : Si vous créez un serveur Web, il est important de gérer correctement les entrées utilisateur, de protéger contre les injections de code et d'autres attaques web classiques.
+    Multithreading : Pour supporter plusieurs connexions simultanées, il est recommandé d'utiliser des threads ou des techniques de programmation asynchrone.
+    Bibliothèques HTTP : Pour ne pas réinventer la roue, l'utilisation d'une bibliothèque comme Boost, Cpp-HTTP, ou Crow peut grandement simplifier la création et la gestion des requêtes HTTP.
+
+En résumé, vous pouvez construire un serveur Web en C++ en partant de zéro avec des sockets ou en utilisant des bibliothèques comme Boost.Asio, Cpp-HTTP, ou Crow pour simplifier le développement.
