@@ -1,4 +1,12 @@
+( 😂 Damned, I got roasted for this one. Fair enough. I had bigger plans for it,
+formal grammar of the language, deeper Metascript concepts, a logic layer to switch between engines,
+but life had other priorities. 
+Family first. 
+The vision was real though, just unfinished. )
+
+
 ( Excuse me for the late, we're depoying the achievements on www.metascript.cm )
+
 
 # MetaScript  
 
@@ -35,48 +43,13 @@
 ## 🔧 Installation and Compilation
 
 **Prerequisites:**
-- `gcc` or any other C++ compiler
-- Python3.10 *(if your compiler includes Python management scripts)*
-- ( Download Graphical Engine CryEngine, Unreal Engine, three.js ... )
 
 ### Installation Steps
 
-( The Metascript Compiler is still in development )
-1. Clone the repository:
-```bash
-git clone https://github.com/your-user/MetaScript.git
-cd MetaScript
-```
-
-2. Compile the project:
-```bash
-make
-```
-
-3. Run an example:
-```bash
-./metascript examples/hello_world.ms
-```
-
----
 
 ## 📄 Code Example
 
-Here is a simple example in MetaScript:
 
-( First version, C++ Based )
-```metascript
-class Simulation {
-void start() {
-print("Welcome to MetaScript!");
-}
-}
-
-Simulation s;
-s.start();
-```
-
----
 
 ## ✅ Roadmap
 
@@ -87,26 +60,10 @@ s.start();
 
 ---
 
-## 🤝 Contribution
-
-Contributions are welcome! If you want to participate:
-
-1. Fork the project
-2. Create a new branch (`git checkout -b feature/my-new-feature`)
-3. Commit your changes (`git commit -m 'Adding a feature'`)
-4. Push the branch (`git push origin feature/my-new-feature`)
-5. Open a **Pull Request**
-
----
-
 ## 📧 Contact
 
 For any questions or suggestions:
-- **Author**: [Ngaba Franck: One of the best C++ artisan on Cameroon]
+- **Author**: [Ngaba Franck: C++ developper]
 - **Email**: brainskullkid@gmail.com
 
 ---
-
-## 📜 License
-
-This project is licensed under the MIT license.
